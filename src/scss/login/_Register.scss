@@ -1,0 +1,15 @@
+.loginForm-register {
+    button {
+        cursor: pointer;
+
+        @include light;
+        font-size: 12px;
+        line-height: 12px;
+
+
+        background: transparent;
+
+        border: none;
+        outline: none;
+    }
+}
