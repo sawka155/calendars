@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Route, Routes, Link, Navigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { Route, Routes, Navigate } from "react-router-dom";
 import { Auths } from './context/auths';
 import Calendar from "./pages/Calendar";
 import Login from './pages/Login';

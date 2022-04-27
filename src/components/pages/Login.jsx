@@ -18,10 +18,9 @@ const Login = ({ loginData }) => {
         localStorage.setItem('login', 'true');
         return <Navigate to="/calendar" />
     }
-
-    console.log(loginData);
     return (
         <div>
+
             <Visible.Provider value={
                 {
                     isVisible,
@@ -30,6 +29,7 @@ const Login = ({ loginData }) => {
             } >
                 <LoginForm />
             </Visible.Provider>
+
         </div>
     )
 }

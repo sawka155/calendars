@@ -3,6 +3,7 @@ import close from '../../img/login/close.svg'
 import { Visible } from '../context/visible';
 
 const LoginModal = ({ children, visible, setVisible }) => {
+
     const { isVisible, setIsVisible } = useContext(Visible);
 
     const rootClasses = ['loginModal']
