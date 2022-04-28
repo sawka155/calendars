@@ -6,6 +6,15 @@ import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
 import NewNam from '../calendar/NewNam';
 import DelaList from '../calendar/DelaList';
+import './styles.css';
+
+const tasks = [
+    {
+        id: 1, nam: 'Событие', title: "Охота", main: "Показаны результаты по запросу warning: A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component Искать вместо этого arning: A component is changing a controlled input to be uncontrolled.This is likely caused by the value changing from a defined to undefined, which should not happen.Decide between using a controlled or uncontrolled input element for the lifetime of the component."
+    },
+    { id: 2, nam: 'Задача', title: "Ужин", main: "Поймать рыбу" },
+    { id: 3, nam: 'Событие', title: "Обед", main: "Поймать рыбу", date: new Date() },
+]
 
 const Calendars = () => {
 
@@ -15,13 +24,7 @@ const Calendars = () => {
 
     const [isVisible, setIsVisible] = useState(false);
 
-    const [dela, setDela] = useState([
-        {
-            id: 1, nam: 'Событие', title: "Охота", main: "Показаны результаты по запросу warning: A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component Искать вместо этого arning: A component is changing a controlled input to be uncontrolled.This is likely caused by the value changing from a defined to undefined, which should not happen.Decide between using a controlled or uncontrolled input element for the lifetime of the component."
-        },
-        { id: 2, nam: 'Задача', title: "Ужин", main: "Поймать рыбу" },
-        { id: 3, nam: 'Событие', title: "Обед", main: "Поймать рыбу" },
-    ]);
+    const [dela, setDela] = useState(tasks);
 
     const [delas, setDelas] = useState([
         ...dela
@@ -30,7 +33,6 @@ const Calendars = () => {
     useEffect(() => {
         add()
     }, [dela])
-
 
     const add = () => {
         setDelas([...dela]);
@@ -45,6 +47,10 @@ const Calendars = () => {
 
     const openDelo = (delos) => {
         setDelas(dela.filter(d => d.id === delos.id))
+    }
+
+    const onDayClick = (date) => {
+        setDela(dela.filter(d => d.date === date))
     }
 
 
@@ -62,40 +68,48 @@ const Calendars = () => {
                 }}>
                 Выход
             </MyButton>
+            <div className="wrapper">
+                <div className="column">
+                    <Calendar
+                        onClickDay={onDayClick}
+                        className="calendarWrapper"
+                        onChange={onChange}
+                        value={value}
+                    />
+                    <NewNam
+                        create={createDela}
+                    />
+                </div>
 
-            <Calendar
-                onChange={onChange}
-                value={value}
-            />
+                <div className="column">
+
+                    <input type="text"
+                        value={value.toLocaleDateString("ru-RU").toString()}
+                        onChange={setUsDate}
+                    />
 
 
-
-            <input type="text"
-                value={value.toLocaleDateString("ru-RU").toString()}
-                onChange={setUsDate}
-            />
+                    <h1></h1>
 
 
-            <h1></h1>
+                    <DelaList
+                        dela={dela}
+                        delas={delas}
 
-            <NewNam
-                create={createDela}
-            />
+                        visible={isVisible}
+                        setVisible={setIsVisible}
 
-            <DelaList
-                dela={dela}
-                delas={delas}
+                        remove={deleteDela}
+                        openDelo={openDelo}
 
-                visible={isVisible}
-                setVisible={setIsVisible}
+                        time={value.toLocaleDateString("ru-RU").toString()}
+                    />
 
-                remove={deleteDela}
-                openDelo={openDelo}
-
-                time={value.toLocaleDateString("ru-RU").toString()}
-            />
+                </div>
+            </div>
 
         </div>
+
     )
 }
 
