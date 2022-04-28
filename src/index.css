@@ -340,4 +340,150 @@ th:not([align]) {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.calendar-dela {
+  padding: 5px 15px;
+  border: 2px solid #303030;
+  width: 348px;
+  max-height: 400px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  overflow: auto;
+}
+
+.dela__line {
+  border: 1px solid #303030;
+  margin: 2px 0 10px 0;
+}
+
+.dela__nam {
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-shadow: 0.1px 0.1px #303030;
+}
+
+.dela__content {
+  font-size: 14px;
+}
+
+.dela__title {
+  margin-bottom: 5px;
+}
+
+.dela__description {
+  text-align: justify;
+}
+
+.dela__modal {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.dela__modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dela__modal-content {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  overflow: auto;
+  border: 2px solid #303030;
+  padding: 10px;
+  background: white;
+}
+
+.calendar__input {
+  width: 264px;
+  height: 25px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(29px);
+          backdrop-filter: blur(29px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+.calendar__title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.calendarInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-bottom: 10px;
+}
+
+.calendarInput p {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calendar__select {
+  width: 100%;
+  height: 25px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(29px);
+          backdrop-filter: blur(29px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  margin-bottom: 15px;
+}
 /*# sourceMappingURL=index.css.map */
