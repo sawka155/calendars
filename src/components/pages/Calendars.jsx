@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Auths } from '../context/auths';
 import MyButton from '../UI/Button/MyButton';
 import { Navigate } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
 import NewNam from '../calendar/NewNam';
-import DelaList from '../calendar/DelaList';
+import ListEventList from '../calendar/ListEventList';
 import './styles.css';
 
 const tasks = [
@@ -19,44 +19,35 @@ const tasks = [
 const Calendars = () => {
 
     const { isAuth, setIsAuth } = useContext(Auths);
-    const [value, onChange] = useState(new Date());
-    const [UsDate, setUsDate] = useState('');
+    const [date, onChangeDate] = useState(new Date());
 
+    const [, setInput] = useState('');
     const [isVisible, setIsVisible] = useState(false);
 
-    const [dela, setDela] = useState(tasks);
-
-    const [delas, setDelas] = useState([
-        ...dela
+    const [listEvent, setListEvent] = useState(tasks);
+    const [descriptionOutput, setDescriptionOutput] = useState([
+        ...listEvent
     ]);
 
-    useEffect(() => {
-        add()
-    }, [dela])
-
-    const add = () => {
-        setDelas([...dela]);
+    const createEvent = (newlistEvent) => {
+        setListEvent([...listEvent, newlistEvent])
     }
-
-    const createDela = (newDela) => {
-        setDela([...dela, newDela])
-    }
-    const deleteDela = (delo) => {
-        setDela(dela.filter(p => p.id !== delo.id));
+    const deleteEvent = (remove) => {
+        setListEvent(listEvent.filter(del => del.id !== remove.id));
     };
 
-    const openDelo = (delos) => {
-        setDelas(dela.filter(d => d.id === delos.id))
+    const description = (descriptionOutput) => {
+        setDescriptionOutput(listEvent.filter(descript => descript.id === descriptionOutput.id))
     }
 
-    const onDayClick = (date) => {
-        setDela(dela.filter(d => d.date === date))
+    const onDayClick = () => {
+        setListEvent(listEvent.filter(date => date.date === date))
     }
-
 
     if (isAuth === false) {
         return <Navigate to="/login" />
     }
+
     return (
         <div>
             <MyButton
@@ -73,43 +64,33 @@ const Calendars = () => {
                     <Calendar
                         onClickDay={onDayClick}
                         className="calendarWrapper"
-                        onChange={onChange}
-                        value={value}
+                        onChange={onChangeDate}
+                        value={date}
                     />
                     <NewNam
-                        create={createDela}
+                        create={createEvent}
                     />
                 </div>
 
                 <div className="column">
-
                     <input type="text"
-                        value={value.toLocaleDateString("ru-RU").toString()}
-                        onChange={setUsDate}
+                        value={date.toLocaleDateString("ru-RU").toString()}
+                        onChange={setInput}
                     />
 
-
-                    <h1></h1>
-
-
-                    <DelaList
-                        dela={dela}
-                        delas={delas}
-
+                    <ListEventList
+                        listEvent={listEvent}
+                        descriptionOutput={descriptionOutput}
                         visible={isVisible}
                         setVisible={setIsVisible}
-
-                        remove={deleteDela}
-                        openDelo={openDelo}
-
-                        time={value.toLocaleDateString("ru-RU").toString()}
+                        remove={deleteEvent}
+                        OpenDescription={description}
+                        time={date.toLocaleDateString("ru-RU").toString()}
                     />
 
                 </div>
             </div>
-
         </div>
-
     )
 }
 
