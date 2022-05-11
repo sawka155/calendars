@@ -1,0 +1,1 @@
+INSERT INTO `user`(`name`, `surname`, `patronymic`, `university`) VALUES ('Васильев','Александр','Владимирович','ВФ МАДИ')
