@@ -19,4 +19,4 @@ cd client | npm start
 Пароль - Пусто
 
 ## Добавление данных в БД (информация о студенте)
-### ` INSERT INTO `user`(`name`, `surname`, `patronymic`, `university`) VALUES ('Васильев','Александр','Владимирович','ВФ МАДИ') `
+` INSERT INTO `user`(`name`, `surname`, `patronymic`, `university`) VALUES ('Васильев','Александр','Владимирович','ВФ МАДИ') `
