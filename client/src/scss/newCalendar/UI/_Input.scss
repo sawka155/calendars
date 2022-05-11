@@ -1,0 +1,32 @@
+.InputCalendar {
+
+    &__label {
+        @include regular;
+        color: #000;
+        font-size: 16px;
+    }
+
+    &__input {
+        display: flex;
+        width: 250px;
+        height: 25px;
+        overflow: auto;
+        border: 1px solid #000;
+        border-radius: 5px;
+
+        @include regular;
+        font-size: 13px;
+    }
+
+    &__textarea {
+        display: flex;
+        width: 250px;
+        height: 80px;
+        overflow: auto;
+        border: 1px solid #000;
+        border-radius: 5px;
+        resize: none;
+        @include regular;
+        font-size: 13px;
+    }
+}

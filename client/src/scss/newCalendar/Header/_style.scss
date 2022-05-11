@@ -1,0 +1,50 @@
+.nCalendar {
+
+    &__header {
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        z-index: 1;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background: #303030;
+        border-bottom: 1px solid white;
+
+    }
+
+    &__container {
+        all: inherit;
+        justify-content: space-between;
+        max-width: 2000px;
+        padding: 0 25px 0 40px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        p {
+            @include light;
+            font-size: 20px;
+            line-height: 24px;
+
+            margin-left: 10px;
+
+            color: #FFF;
+        }
+    }
+
+    &__header-end {
+        display: flex;
+        width: 230px;
+        justify-content: space-between;
+    }
+
+    &__profile {}
+
+    &__exit {}
+}

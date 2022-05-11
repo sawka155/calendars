@@ -1,0 +1,37 @@
+@import 'null';
+@import 'font';
+
+@import './login/login';
+
+@import './login/UI/Input/loginInput';
+@import './login/UI/Button/loginBtn';
+@import './login/Register';
+@import './login/loginModal';
+
+
+
+//nCalendar
+//Header
+@import './newCalendar/Header/style';
+
+//Main
+@import './newCalendar/Main/style';
+//Add
+@import './newCalendar/Main/add/style';
+//Event 
+@import './newCalendar/Main/event/style';
+
+//UI
+//Button
+@import './newCalendar/UI/Button';
+//Input
+@import './newCalendar/UI/Input';
+
+//Новое событие
+@import './newCalendar/Main/newEvent/style';
+
+//Отображение одного события 
+@import './newCalendar/Main/openEvent/style';
+
+//Профиль
+@import './newCalendar/Profile/style';

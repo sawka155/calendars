@@ -1,0 +1,64 @@
+.add {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 265px;
+    }
+
+    &__select {
+        width: 100%;
+        height: 30px;
+
+        @include regular;
+        font-size: 14px;
+        line-height: 17px;
+        color: #303030;
+
+        margin: 100px 0 10px 0;
+        border-radius: 6px 6px 0px 0px;
+    }
+
+    &__option {
+        color: #303030;
+        @include regular;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    &__option:nth-child(1) {
+        display: none;
+    }
+
+    &__calendar {
+        display: flex;
+        align-items: center;
+        position: static;
+        height: 306px;
+
+    }
+}
+
+
+.react-calendar {
+    height: 306px;
+    border-radius: 0px 0px 6px 6px;
+
+}
+
+.react-calendar__navigation__label {
+    @include regular;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day {
+    @include regular;
+}
+
+.react-calendar__navigation {
+    margin-bottom: 5px !important;
+}

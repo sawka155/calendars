@@ -1,0 +1,87 @@
+.events {
+    width: 100%;
+    padding: 0 1px;
+    max-height: 786px;
+    border: 2px solid #303030;
+    border-radius: 5px;
+    overflow: auto;
+
+
+    &__date {
+        @include regular;
+        font-size: 20px;
+        line-height: 24px;
+        color: #303030;
+
+        margin: 10px 0;
+
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.event {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-evenly;
+    background: #F5F5F5;
+    margin: 15px 15px;
+
+    height: 120px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 60px;
+        align-items: center;
+    }
+
+    &__empty {
+        @include regular;
+        font-size: 24px;
+        line-height: 29px;
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    &__header {
+        @include regular;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    &__body {
+        @include light;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    &__btns {
+        display: flex;
+
+        justify-content: space-between;
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .event {
+        height: 170px;
+    }
+
+    .event__btns {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        height: 70px;
+    }
+
+    .nCalendar__add {
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,39 @@
+.newevent {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(7px);
+
+    position: fixed;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: none;
+
+    &__content {
+        background: #FFF;
+
+        border-radius: 15px;
+
+        width: 400px;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 200px;
+    }
+}
+
+.newevent.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
